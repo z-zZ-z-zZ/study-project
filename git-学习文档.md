@@ -33,6 +33,16 @@
     The key fingerprint is:
     #SHA256:巴拉巴拉一大堆..
 
+
+
+
+
     #查看本地添加的私钥的全部
     ssh-add -l
+
+
+
+    # 删除git用户配置
+    git config --unset user.name
+    git config --unset user.email
 ```
