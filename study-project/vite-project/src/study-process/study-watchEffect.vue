@@ -53,6 +53,6 @@ const stop = watchEffect((oninvalidata)=>{
 })
 const stopWatch = ()=>stop();
 </script>
-<style lang='less' scoped>
+<style lang='less' >
 
 </style>

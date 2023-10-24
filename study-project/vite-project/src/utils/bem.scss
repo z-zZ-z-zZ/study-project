@@ -1,0 +1,58 @@
+// sass 声明变量  $变量名  使用变量  通过差值语句 #{};
+
+$namespace:'np' !default;
+$block-sel:'-' !default;
+$elem-sel:'__' !default;
+$mod-sel:'--' !default;
+
+
+// 混入  定义b  eg:   np-div
+@mixin b($block) {
+    $B:#{$namespace + $block-sel + $block};
+    .#{$B} {
+        // 初始化
+        @content; // 相当于一个占位符，当添加样式时  样式会将该内容覆盖掉
+    }
+}
+
+// 混入  定义e
+@mixin e($el) {
+    $selector: &;
+    /*  不加@at-root  相当于   .parent {.parent-child{}}
+        加上 相当于  .parent{}
+                .parent-child{}
+ */
+
+    @at-root {
+        // 跳出当前嵌套
+        #{$selector + $elem-sel + $el} {
+            // 初始化
+            @content; // 相当于一个占位符，当添加样式时  样式会将该内容覆盖掉
+        }
+    }
+
+}
+
+// 混入  定义m
+@mixin m($m) {
+    $selector: &;
+    /*  不加@at-root  相当于   .parent {.parent-child{}}
+        加上 相当于  .parent{}
+                .parent-child{}
+ */
+
+    @at-root {
+        // 跳出当前嵌套
+        #{$selector + $mod-sel + $m} {
+            // 初始化
+            @content; // 相当于一个占位符，当添加样式时  样式会将该内容覆盖掉
+        }
+    }
+
+}
+
+
+@mixin bfc{
+    height: 100%;
+    overflow: hidden;
+}

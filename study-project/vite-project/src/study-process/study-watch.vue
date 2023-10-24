@@ -77,6 +77,6 @@ watch(() => recObj.levelone.leveltwo.name,(newVal,oldVal)=>{
 
 </script>
 
-<style lang='less' scoped>
+<style lang='less' >
 
 </style>

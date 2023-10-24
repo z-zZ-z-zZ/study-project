@@ -97,4 +97,4 @@ const toRawChange = () => {
 
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less"></style>

@@ -1,18 +1,18 @@
 <template>
-    <div>组件的使用！</div>
-    <ComponentsTest v-if="flag"></ComponentsTest>
-    <br>
-    <button @click="flag = !flag">创建-销毁</button>
+        <Layout></Layout>
+    <!-- <StudySass></StudySass> -->
 </template>
 
 <script setup lang='ts'>
-import {ref,reactive} from 'vue';
+import {ref,reactive} from 'vue'
+// import StudySass from './components/bemStudy.vue';
+import Layout from './layoutTest/index.vue'
 
-import ComponentsTest from './components/componentsTest.vue';
-
-let flag = ref<boolean>(true)
 </script>
 
-<style lang='less' scoped>
+<style lang='scss'>
+#app{
+    @include bfc;
+}   
 
 </style>

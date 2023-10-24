@@ -155,6 +155,6 @@ const del = (index:number)=>{
 
 </script>
 
-<style lang='less' scoped>
+<style lang='less'>
 
 </style>
