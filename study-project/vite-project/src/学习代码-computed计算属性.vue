@@ -7,7 +7,7 @@
         <!-- <button @click="changeName">computed函数set</button> -->
 
             <div>
-                <input type="text" placeholder="搜索">
+                <input v-model="searchKey" type="text" placeholder="搜索">
             </div>
             <div style="margin-top: 30px;">
                 <table border width="600" cellpadding="0" cellspacing="0">
@@ -21,7 +21,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(item,index) in data" :key="index">
+                            <!-- 通过计算函数实现 -->
+                        <!-- <tr v-for="(item,index) in data" :key="index">
+                            <td align="center">{{ item.name }}</td>
+                            <td align="center">
+                                <button @click=" item.num>1 ? (item.num--,total()) : null ">-</button>
+                                {{ item.num }}
+                                 <button @click=" item.num<99 ? (item.num++,total()) : null ">+</button></td>
+                            <td align="center">{{ item.price }}</td>
+                            <td align="center">{{ item.num * item.price }}</td>
+                            <td align="center"><button @click="del(index)">删除</button></td>
+                            
+
+                        </tr> -->
+                        <tr v-for="(item,index) in searchData" :key="index">
                             <td align="center">{{ item.name }}</td>
                             <td align="center">
                                 <button @click=" item.num>1 ? item.num-- : null ">-</button>
@@ -29,7 +42,7 @@
                                  <button @click=" item.num<99 ? item.num++ : null ">+</button></td>
                             <td align="center">{{ item.price }}</td>
                             <td align="center">{{ item.num * item.price }}</td>
-                            <td align="center"><button @click="item.num ++ ">删除</button></td>
+                            <td align="center"><button @click="del(index)">删除</button></td>
                             
 
                         </tr>
@@ -76,6 +89,7 @@ import { ref,computed, reactive } from "vue";
 
 
 // 案例实现
+// 未使用计算属性 需要多次调用计算函数 比较繁琐
 interface Data {
     name:string,
     price:number,
@@ -84,34 +98,61 @@ interface Data {
 let data = reactive<Data[]>([
     {
         name:'物品1',
-        price:49.9,
+        price:49,
         num:1
     },
     {
         name:'物品2',
-        price:39.9,
+        price:39,
         num:1
     },
     {
         name:'物品3',
-        price:19.9,
+        price:19,
         num:1
     },
     {
         name:'物品4',
-        price:29.9,
+        price:29,
         num:1
     }
     
 ])
 
-let $total = ref<Number>(0);
+let searchKey = ref<string>('');
+
+// 通过计算函数实现 每次都需要调用计算函数 比较繁琐
+/* let $total = ref<Number>(0);
 const total = () => {
    $total.value =  data.reduce((pre:number,next:Data)=>{
         return pre + next.num * next.price
     },0)
 }
 total()
+
+const del = (index:number)=>{
+    data.splice(index,1);
+    total();
+} */
+
+
+// 使用计算函数
+const $total = computed(() => {
+  return data.reduce((pre:number,next:Data)=>{
+        return pre + next.num * next.price
+    },0)
+});
+
+const searchData = computed(()=>{
+    return data.filter((item:Data)=>{
+        return item.name.includes(searchKey.value)
+    })
+})
+
+const del = (index:number)=>{
+    data.splice(index,1);
+}
+
 </script>
 
 <style lang='less' scoped>

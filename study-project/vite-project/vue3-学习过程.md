@@ -32,3 +32,52 @@ vue3 是基于proxy进行的
      index.html   vite使用index.html作为入口文件
      
 ```
+
+
+
+## vue3 组件和生命周期
+
+### 组件
+```js
+    import {组件名} from {组件路径}  // 引入组件
+    //vue2 中使用componetns 注册组件
+    components:{
+        组件名
+    }
+    
+    // vue3 中不用注册 引入后就可以直接使用
+```
+
+   #### 组件的生命周期
+   ```js
+        vue2 中组件的生命周期
+        beforeCreate
+        created
+        beforeMount
+        mounted
+        beforeUpdate
+        updated
+        beforeDestroy
+        destroyed
+
+
+        vue3 中：  
+        setup   //（setup语法糖模式中 没有 beforeCreate created 这俩生命周期  是用setup去代替 ）
+        onBeforeMount   // 类似于vue2  在这个时候读取不到dom元素 
+        onMounted       // 类似于vue2  在这个时候能够读取到dom元素 
+        onBeforeUpdate  // 获取更新之前的dom
+        onUpdated       // 获取更新之后的dom
+        onBeforeUnmount
+        onUnmounted
+
+    vue3中还提供了两个钩子函数 用于调试
+        onRenderTracked(e=>{
+          console.log("onRenderTracked",e)  // 页面个加载执行
+        });
+
+        onRenderTriggered(e=>{
+          console.log("onRenderTriggered",e)  // 页面发生变化执行
+        });
+
+
+    ```
