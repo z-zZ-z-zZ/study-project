@@ -24,12 +24,12 @@
                         <tr v-for="(item,index) in data" :key="index">
                             <td align="center">{{ item.name }}</td>
                             <td align="center">
-                                <button @click=" item.num>1 ? (item.num--,total()) : null ">-</button>
+                                <button @click=" item.num>1 ? item.num-- : null ">-</button>
                                 {{ item.num }}
-                                 <button @click=" item.num<99 ? (item.num++,total()) : null ">+</button></td>
+                                 <button @click=" item.num<99 ? item.num++ : null ">+</button></td>
                             <td align="center">{{ item.price }}</td>
                             <td align="center">{{ item.num * item.price }}</td>
-                            <td align="center"><button @click="del(index)">删除</button></td>
+                            <td align="center"><button @click="item.num ++ ">删除</button></td>
                             
 
                         </tr>
@@ -84,22 +84,22 @@ interface Data {
 let data = reactive<Data[]>([
     {
         name:'物品1',
-        price:49,
+        price:49.9,
         num:1
     },
     {
         name:'物品2',
-        price:39,
+        price:39.9,
         num:1
     },
     {
         name:'物品3',
-        price:19,
+        price:19.9,
         num:1
     },
     {
         name:'物品4',
-        price:29,
+        price:29.9,
         num:1
     }
     
@@ -112,12 +112,6 @@ const total = () => {
     },0)
 }
 total()
-
-const del = (index:number)=>{
-    data.splice(index,1);
-    total();
-}
-
 </script>
 
 <style lang='less' scoped>

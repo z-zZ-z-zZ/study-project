@@ -7,7 +7,7 @@
     git config --global user.email
 ```
 
-通过这两个命令可以查看登陆的git账号
+通过这两个命令可以查看登陆的git账号（全局,某个项目下 不添加 --global）
 
 添加密钥的时候访问不到 .ssh文件  
 通过 open ./.ssh 就可以打开该文件了
@@ -15,6 +15,7 @@
 ``` bash
     git remote add {仓库名} {仓库链接} #添加远程仓库
     git remote remove {仓库名}  #可以删除某个链接的远程仓库
+    git remote -v   #查看所有的remote
 
 ```
 
