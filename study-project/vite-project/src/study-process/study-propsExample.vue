@@ -1,0 +1,138 @@
+<template>
+    <div>
+        <ChildDom :list="list"></ChildDom>
+    </div>
+</template>
+
+<script setup lang='ts'>
+import {ref,reactive} from 'vue';
+import ChildDom from '../propsStudy/water-fall.vue';
+
+let list = ref<any[]>([
+    {
+        height:300,
+        background:'red'
+    },
+    {
+        height:320,
+        background:'yellow'
+    },
+    {
+        height:200,
+        background:'green'
+    },
+    {
+        height:350,
+        background:'green'
+    },
+    {
+        height:210,
+        background:'lightblue'
+    },
+    {
+        height:150,
+        background:'pink'
+    },
+    {
+        height:300,
+        background:'red'
+    },
+    {
+        height:320,
+        background:'yellow'
+    },
+    {
+        height:200,
+        background:'green'
+    },
+    {
+        height:350,
+        background:'green'
+    },
+    {
+        height:210,
+        background:'lightblue'
+    },
+    {
+        height:150,
+        background:'pink'
+    },
+    {
+        height:300,
+        background:'red'
+    },
+    {
+        height:320,
+        background:'yellow'
+    },
+    {
+        height:200,
+        background:'green'
+    },
+    {
+        height:350,
+        background:'green'
+    },
+    {
+        height:210,
+        background:'lightblue'
+    },
+    {
+        height:150,
+        background:'pink'
+    },
+    {
+        height:300,
+        background:'red'
+    },
+    {
+        height:320,
+        background:'yellow'
+    },
+    {
+        height:200,
+        background:'green'
+    },
+    {
+        height:350,
+        background:'green'
+    },
+    {
+        height:210,
+        background:'lightblue'
+    },
+    {
+        height:150,
+        background:'pink'
+    },
+    {
+        height:300,
+        background:'red'
+    },
+    {
+        height:320,
+        background:'yellow'
+    },
+    {
+        height:200,
+        background:'green'
+    },
+    {
+        height:350,
+        background:'green'
+    },
+    {
+        height:210,
+        background:'lightblue'
+    },
+    {
+        height:150,
+        background:'pink'
+    },
+])
+
+</script>
+
+<style lang='less' scoped>
+
+</style>
