@@ -1,0 +1,8 @@
+{
+    "data":{
+        "name":"姓名",
+        "age":16,
+        "url":"www.baidu.com",
+        "desc":"异步组件调用"
+    }
+}
