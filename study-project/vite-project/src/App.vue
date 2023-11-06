@@ -13,7 +13,10 @@
         <!-- 插槽 -->
         <!-- <SlotVue></SlotVue> -->
         <!-- 异步组件 -->
-        <AsyncVue></AsyncVue>
+        <!-- <AsyncVue></AsyncVue> -->
+        <!-- 动画组件 -->
+        <transitonVue></transitonVue>
+
     </div>
 </template>
 
@@ -25,7 +28,7 @@ import TreeVue from './components/tree.vue';
 import DynamicVue from './study-process/study-dynamicComponents.vue';
 import SlotVue from './study-process/study-slot.vue';
 import AsyncVue from './study-process/study-asyncComponent.vue'
-
+import transitonVue from './study-process/study-transiton.vue'
 
 // 定义tree数据类型
 

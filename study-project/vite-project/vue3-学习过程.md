@@ -13,7 +13,7 @@ vue3 是基于proxy进行的
 ## vue2(object.define.Property)  和 vue3(proxy) 的响应式原理
 ### vue2 中的不足
     1. 对象只能劫持设置好的数据，新增的数据需要通过 Vue.set() 也就是$set 
-    2. 数组只能操作七种方法（重写的方法），修改某一项的值无法劫持 
+    2. 数组只能操作七种方法（重写的方法） push pop shift unshift  reverse  splice  sort  ，修改某一项的值无法劫持 
 
 
 # vue3 的目录结构
