@@ -44,7 +44,7 @@ import { ref, reactive,readonly,shallowReactive} from 'vue';
                 1. 支持所有的类型;
                 2. 取值和赋值都需要通过 对象.value.值的方式获取
             reactive：
-                1. 仅支持引用类型（Aarray Object Map Set）  --- 因为该函数的范型定义为了object
+                1. 仅支持引用类型（Aarray Object Map Set）  --- 因为该函数的泛型定义为了object
                 2. 跟普通的对象一样 直接 对象.值 就可以了
                 3. reactive 在异步调用的时候 会存在值 但是界面渲染不出来  因为reactive使用proxy代理的  直接赋值会破坏响应式对象
                     3.1 数组可以使用push和结构赋值来解决
@@ -58,7 +58,7 @@ import { ref, reactive,readonly,shallowReactive} from 'vue';
 })
  */
 
-// 也可以自己定一个范型
+// 也可以自己定一个泛型
 /* type T = {
     title:string;
 }

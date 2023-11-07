@@ -1,5 +1,13 @@
-var str = '定义字符串';
-var num = 123;
-var num1 = NaN; // number还可以定义NaN
-// tsc -w index.ts  添加监听  然后通过node index.js 就可以查看编写的代码结果了
-console.log(str);
+/*
+    枚举类型
+    js中是不存在枚举这个概念的  在ts中通过 enum 关键字定义枚举类型
+*/
+var Color;
+(function (Color) {
+    Color[Color["red"] = 0] = "red";
+    Color[Color["green"] = 1] = "green";
+    Color[Color["blue"] = 2] = "blue";
+})(Color || (Color = {}));
+console.log(Color.red);
+console.log(Color.green);
+console.log(Color.blue);

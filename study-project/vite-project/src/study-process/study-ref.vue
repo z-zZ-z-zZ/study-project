@@ -45,7 +45,7 @@ export default {
 import { ref, isRef, shallowRef, triggerRef, customRef } from 'vue';
 import type { Ref } from 'vue';
 
-// 定义范型
+// 定义泛型
 // type O = {
 //   name:string
 // };
@@ -133,7 +133,7 @@ const change = () => {
 };
 
 
-// ref 还可以获取元素 -- 需与dom定义的ref名相同； 添加范型
+// ref 还可以获取元素 -- 需与dom定义的ref名相同； 添加泛型
 // const domDiv = ref<HTMLDivElement>();
 
 </script>
